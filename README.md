@@ -1,4 +1,4 @@
-# ReelTime
+# ReelTime (In Progress)
 
 **ReelTime** is a lightweight Chrome extension that tracks how many reels you scroll through on platforms like **YouTube Shorts**, **Instagram Reels**, **Facebook Reels**, and **TikTok**.
 

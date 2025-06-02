@@ -1,6 +1,6 @@
 {
-  "name": "RotMax",
-  "description": "Successfully meet your bedrot quota with this simple tool",
+  "name": "ReelTime",
+  "description": "Tracks the number of reels scrolled on YouTube Shorts, Instagram Reels, Facebook Reels, and TikTok to discourage bedrotting.",
   "version": "1.0",
   "manifest_version": 3,
 
@@ -10,6 +10,15 @@
     "alarms",
     "tabs"
   ],
+
+  "host_permissions": [
+  "*://www.youtube.com/*",
+  "*://*.instagram.com/*",
+  "*://*.facebook.com/*",
+  "*://*.tiktok.com/*"
+],
+
+
 
   "action": {
     "default_popup": "popup/popup.html",
@@ -32,23 +41,14 @@
   "background": {
     "service_worker": "scripts/background.js"
   },
-
-"content_scripts": [
-  {
-    "matches": ["*://www.youtube.com/shorts/*"],
-    "js": ["content/youtube.js"],
-    "run_at": "document_idle"
-  },
+  
+  "content_scripts": [
   {
     "matches": ["*://www.tiktok.com/*"],
     "js": ["content/tiktok.js"],
     "run_at": "document_idle"
-  },
-  {
-    "matches": ["*://www.instagram.com/*"],
-    "js": ["content/instagram.js"],
-    "run_at": "document_idle"
   }
 ]
+
 
 }

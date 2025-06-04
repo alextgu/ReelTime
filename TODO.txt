@@ -1,0 +1,6 @@
+Figure out TikTok scroll tracker
+Make The history (stats page) ->  back option, download, info (your last 3 days will be saved) on top left. Tiktok, instagram, facebook and youtube icons with numbers underneath, if hover icons it displays the percentage you are in for the day.
+Time zones
+Error codes for errors and error testing
+Alert system that alerts users every 1st, 50, 100, 500, 1000 scrolls
+Small popup to remind you of your daily summary

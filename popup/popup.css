@@ -1,0 +1,67 @@
+body {
+      font-family: Arial, sans-serif;
+      width: 220px;
+      padding: 15px;
+      margin: 0;
+      background: #f0f0f0;
+      color: #333;
+      text-align: center;
+    }
+    
+    .icon-link {
+      position: relative;
+      display: inline-block;
+      font-size: 30px;
+      color: #3b4f63;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    .icon-link:hover {
+      color: #0056b3;
+    }
+    .icon-link i {
+      display: inline-block;
+      transform: scaleY(-1) rotate(90deg);
+      font-size: 1.8rem;
+    }
+    .tooltip-text {
+      visibility: hidden;
+      width: 100px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      padding: 6px 8px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      font-size: 12px;
+    }
+    .icon-link:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    #counter {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 10px 0 20px 0;
+      color: #3b4f63;
+    }
+    p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }

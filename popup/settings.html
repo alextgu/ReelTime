@@ -3,26 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <title>Settings</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <script src="popup.js"></script>
-  <link rel="stylesheet" href="popup.css">
-
+  <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
+
+<header> 
+  <a href="popup.html" class="icon-link" title="Back to Popup">
+    <i class="fa-solid fa-arrow-left"></i>   
+  </a>
+</header>
+
 <h1>Set Custom Alerts</h1>
 
-<label class="remove-alerts">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label>
+<div class="switch-wrapper">
+  <span>Enable Alerts</span>
+  <label class="switch">
+    <input type="checkbox" id="toggle-alerts" />
+    <span class="slider round"></span>
+  </label>
+</div>
 
-<form>Alert Every:
-    <input type="text" id="fname" name="fname"><br> </form>
-<form>Daily Limit Alert: 
-    <input type="text" id="fname" name="fname"><br>
+
+<form>
+  <label for="alert-every">Alert Every:</label>
+  <input type="text" id="alert-every" name="alert-every" placeholder="e.g. 50"/>
 </form>
 
-  
+<form>
+  <label for="daily-limit">Daily Limit Alert:</label>
+  <input type="text" id="daily-limit" name="daily-limit" placeholder="e.g. 250"/>
+</form>
+
+
 </body>
 </html>

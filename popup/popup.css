@@ -1,67 +1,238 @@
+:root {
+  --icon-color-base: #3b4f63;
+  --icon-color-hover: #0056b3;
+  --text-color-primary: #333;
+  --text-color-header-icons: #333;
+  --background-color: #f0f0f0;
+  --header-text-color: #222;
+  --tooltip-bg-color: #333;
+  --tooltip-text-color: #fff;
+}
+
 body {
-      font-family: Arial, sans-serif;
-      width: 220px;
-      padding: 15px;
-      margin: 0;
-      background: #f0f0f0;
-      color: #333;
-      text-align: center;
-    }
-    
-    .icon-link {
-      position: relative;
-      display: inline-block;
-      font-size: 30px;
-      color: #3b4f63;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      text-decoration: none;
-    }
-    .icon-link:hover {
-      color: #0056b3;
-    }
-    .icon-link i {
-      display: inline-block;
-      transform: scaleY(-1) rotate(90deg);
-      font-size: 1.8rem;
-    }
-    .tooltip-text {
-      visibility: hidden;
-      width: 100px;
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      border-radius: 4px;
-      padding: 6px 8px;
-      position: absolute;
-      z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-      font-size: 12px;
-    }
-    .icon-link:hover .tooltip-text {
-      visibility: visible;
-      opacity: 1;
-    }
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: #222;
-    }
-    #counter {
-      font-size: 28px;
-      font-weight: bold;
-      margin: 10px 0 20px 0;
-      color: #3b4f63;
-    }
-    p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 5px;
-    }
+  font-family: Arial, sans-serif;
+  width: 220px;
+  padding: 15px;
+  margin: 0;
+  background: var(--background-color);
+  color: var(--text-color-primary);
+  text-align: center;
+}
+
+.icon-link {
+  position: relative;
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--icon-color-base);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  color: var(--icon-color-hover);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 12px;
+}
+
+header .icon-link i,
+#info-icon {
+  font-size: 16px;
+  color: var(--text-color-header-icons);
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+header .icon-link:hover i,
+#info-icon:hover {
+  color: var(--icon-color-hover);
+}
+
+.fa-chart-bar {
+  transform: scaleY(-1) rotate(90deg);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 100px;
+  background-color: var(--tooltip-bg-color);
+  color: var(--tooltip-text-color);
+  text-align: center;
+  border-radius: 4px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  font-size: 12px;
+}
+
+.icon-link:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #222;
+  text-align: center; /* optional if you want centered */
+  line-height: 1.2;    /* consistent line height */
+}
+
+#counter {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 10px 0 20px 0;
+  color: var(--icon-color-base);
+}
+
+p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.bar {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+section.data {
+  display: flex;
+  justify-content: center;
+  gap: 24px; /* horizontal spacing between icon+number pairs */
+  margin-bottom: 12px;
+}
+
+section.data .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px; /* fixed width for each icon+number pair */
+}
+
+section.data .item i {
+  font-size: 24px;
+  color: var(--icon-color-base);
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+section.data .item:hover i {
+  color: var(--icon-color-hover);
+}
+
+section.data .item span {
+  width: 36px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: monospace, monospace;
+  color: var(--icon-color-base);
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #3b4f63;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+form {
+  margin: 10px 0;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label[for] {
+  margin-bottom: 6px;
+}
+
+input[type="number"] {
+  padding: 5px;
+  width: 130px;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline-offset: 2px;
+  outline-color: #3b4f63;
+  transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #3b4f63;
+}
+
+.switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 16px 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--icon-color-base);
+}
+
+

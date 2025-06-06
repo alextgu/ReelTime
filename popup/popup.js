@@ -36,3 +36,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('toggle-alerts');
+  const inputs = [
+    document.getElementById('alert-every'),
+    document.getElementById('daily-limit')
+  ];
+
+  // Load saved settings on page load
+  chrome.storage.local.get(['alertsEnabled', 'alertEvery', 'dailyLimit'], (result) => {
+    const enabled = result.alertsEnabled ?? false;
+    toggle.checked = enabled;
+    setInputsDisabled(!enabled);
+
+    if (result.alertEvery) inputs[0].value = result.alertEvery;
+    if (result.dailyLimit) inputs[1].value = result.dailyLimit;
+  });
+
+  function setInputsDisabled(disabled) {
+    inputs.forEach(input => {
+      input.disabled = disabled;
+    });
+  }
+
+  // Allow only numbers in inputs
+  inputs.forEach(input => {
+    input.addEventListener('input', e => {
+      e.target.value = e.target.value.replace(/[^0-9]/g, '');
+      saveSettings(); // save on input change
+    });
+  });
+
+  toggle.addEventListener('change', () => {
+    setInputsDisabled(!toggle.checked);
+    saveSettings(); // save on toggle change
+  });
+
+  function saveSettings() {
+    chrome.storage.local.set({
+      alertsEnabled: toggle.checked,
+      alertEvery: inputs[0].value,
+      dailyLimit: inputs[1].value
+    });
+  }
+});

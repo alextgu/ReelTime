@@ -1,5 +1,6 @@
-Figure out TikTok scroll tracker
-Time zones
-Error codes for errors and error testing
-Alert system that alerts users every 1st, 50, 100, 500, 1000 scrolls
-Small popup to remind you of your daily summary
+Tiktok ->
+    - Redirect users to link change if they are on tiktok with no link change
+
+Small popup to remind you of your daily summary every day change
+
+A page for history of past 2 days

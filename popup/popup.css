@@ -7,6 +7,11 @@
   --header-text-color: #222;
   --tooltip-bg-color: #333;
   --tooltip-text-color: #fff;
+  --input-border-color: #ccc;
+  --input-focus-outline-color: var(--icon-color-base);
+  --slider-background: #ccc;
+  --slider-knob: #fff;
+  --secondary-text-color: #555;
 }
 
 body {
@@ -87,9 +92,9 @@ h1 {
   font-weight: 600;
   font-size: 22px;
   margin-bottom: 15px;
-  color: #222;
-  text-align: center; /* optional if you want centered */
-  line-height: 1.2;    /* consistent line height */
+  color: var(--header-text-color);
+  text-align: center;
+  line-height: 1.2;
 }
 
 #counter {
@@ -101,7 +106,7 @@ h1 {
 
 p {
   font-size: 14px;
-  color: #555;
+  color: var(--secondary-text-color);
   margin-bottom: 5px;
 }
 
@@ -119,7 +124,7 @@ a {
 section.data {
   display: flex;
   justify-content: center;
-  gap: 24px; /* horizontal spacing between icon+number pairs */
+  gap: 24px;
   margin-bottom: 12px;
 }
 
@@ -127,7 +132,7 @@ section.data .item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50px; /* fixed width for each icon+number pair */
+  width: 50px;
 }
 
 section.data .item i {
@@ -152,6 +157,7 @@ section.data .item span {
   font-family: monospace, monospace;
   color: var(--icon-color-base);
 }
+
 .switch {
   position: relative;
   display: inline-block;
@@ -169,7 +175,7 @@ section.data .item span {
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
+  background-color: var(--slider-background);
   transition: .4s;
   border-radius: 20px;
 }
@@ -181,13 +187,13 @@ section.data .item span {
   width: 14px;
   left: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: var(--slider-knob);
   transition: .4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #3b4f63;
+  background-color: var(--icon-color-base);
 }
 
 input:checked + .slider:before {
@@ -206,22 +212,22 @@ label[for] {
   margin-bottom: 6px;
 }
 
-input[type="number"] {
+input[type="number"]{
   padding: 5px;
   width: 130px;
   font-family: monospace;
   font-weight: 700;
   font-size: 16px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--input-border-color);
   border-radius: 4px;
   outline-offset: 2px;
-  outline-color: #3b4f63;
+  outline-color: var(--input-focus-outline-color);
   transition: border-color 0.3s ease;
 }
 
 input[type="number"]:focus {
-  border-color: #3b4f63;
+  border-color: var(--input-focus-outline-color);
 }
 
 .switch-wrapper {
@@ -235,4 +241,6 @@ input[type="number"]:focus {
   color: var(--icon-color-base);
 }
 
-
+label {
+  color: var(--text-color-primary);
+}

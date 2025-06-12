@@ -1,6 +1,7 @@
 Tiktok ->
     - Redirect users to link change if they are on tiktok with no link change
 
-Small popup to remind you of your daily summary every day change
+Reset count and alert
+Updates
 
 A page for history of past 2 days
